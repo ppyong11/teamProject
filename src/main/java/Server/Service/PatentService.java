@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,14 +23,13 @@ public class PatentService {
     }
 
     public List<PatentDto> findPatents(List<String> categories) {
-        // 카테고리 리스트가 비어있는 경우
-        if (categories == null || categories.isEmpty()) {
-            // 카테고리 수가 1, 2, 3개가 아닐 경우 예외 던지기
+        if (categories == null || categories.isEmpty() || categories.size() > 3) {
+            // 카테고리 개수가 3개 이상이거나 리스트가 비어있으면 예외 던져
             throw new InvalidCategoryCountException("선택된 카테고리가 없거나 개수를 초과해 처리할 수 없습니다");
         }
 
-        // 검색 결과를 저장할 리스트
-        List<PatentEntity> entities;
+        // 검색 결과 저장 리스트
+        List<PatentEntity> entities = new ArrayList<>();
 
         // 카테고리 크기에 따라 다르게 처리
         switch (categories.size()) {
@@ -41,8 +42,6 @@ public class PatentService {
             case 3:
                 entities = patentRepository.findBy3Categories(categories.get(0), categories.get(1), categories.get(2));
                 break;
-            default:
-                throw new IllegalArgumentException("1~3개의 카테고리만 지원합니다.");
         }
 
         // Entity -> DTO 변환

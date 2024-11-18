@@ -26,7 +26,8 @@ public class PatentController {
     @GetMapping("/category")
     public List<PatentDto> getPetents(@RequestParam String categories){
         // categories 문자열을 ,로 분리하여 List<String>으로 변환 후 검색을 위해 % 추가
-        List<String> categoryList = Arrays.asList(categories.split(","));
+        String trim_categories= categories.replace(" ", "");
+        List<String> categoryList = Arrays.asList(trim_categories.split(","));
 
         List<String> modifiedCategoryList = categoryList.stream()
                 .map(category -> category + "%")
@@ -36,10 +37,10 @@ public class PatentController {
         return patentService.findPatents(modifiedCategoryList);
     }
 
-    /*필요 로직 구현 필요
     //어플리케이션 번호로 조회
     @GetMapping("/appNumber")
-    public List<PatentAllDto> getAllDate(@RequestParam String appNumber){
-        return patentService.findAlldate(appNumber);
-    }*/
+    public List<PatentAllDto> getAllDate(@RequestParam String number){
+        logger.info("Received categories with % appended: {}", number);
+        return patentService.findAllData(number);
+    }
 }

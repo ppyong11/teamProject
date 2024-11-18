@@ -1,7 +1,12 @@
 package Server.Dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter
+@Setter
 public class PatentAllDto {
     private String title;
     private String cpcCode;
@@ -13,13 +18,12 @@ public class PatentAllDto {
     private Date appDate;
     private String appNumber;
     private Date pubDate;
-    private String pubNumber;
     private String drawing;
     private String thumbnail;
 
     public PatentAllDto(String title, String cpc, String summary, String applicant,
                         String regStatus, Date appDate, String appNumber, Date regDate, String regNumber,
-                        Date pubDate, String pubNumber, String drawing, String thumbnail) {
+                        Date pubDate, String drawing, String thumbnail) {
         this.title = title;
         this.cpcCode = cpc;
         this.summary = summary;
@@ -30,7 +34,6 @@ public class PatentAllDto {
         this.regDate= regDate;
         this.regNumber = regNumber;
         this.pubDate = pubDate;
-        this.pubNumber = pubNumber;
         this.drawing = drawing;
         this.thumbnail = thumbnail;
     }

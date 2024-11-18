@@ -26,8 +26,7 @@ public interface PatentRepository extends JpaRepository<PatentEntity, Long> {
                                      @Param("category2") String category2,
                                      @Param("category3") String category3);
 
-    /*
-    // 여러 카테고리의 교집합으로 CPC 데이터 조회
-    @Query(value = "SELECT c.* FROM patent c WHERE c.cpcCode IN :categories GROUP BY c.category HAVING COUNT(DISTINCT c.cpcCode) = :categoryCount", nativeQuery = true)
-    List<PatentDto> findByCategories(@Param("categories") List<String> categories, @Param("categoryCount") long categoryCount);*/
+    //상세 데이터 조회
+    @Query(value= "SELECT * FROM patent WHERE app_number= :appNumber", nativeQuery = true)
+    List<PatentEntity> findByAppNumber(@Param("appNumber") String appNumber);
 }

@@ -20,46 +20,38 @@ import java.util.Date;
 
 public class PatentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    private String ApplicationNumber;
 
-    @Column(name = "title", nullable = false, unique = true)
-    private String title;
+    @Column(nullable = false)
+    private String InventionName;
 
-    @Column(name = "cpc_code", nullable = false, unique = true)
-    private String cpcCode;
+    @Column(nullable = false)
+    private String InternationalpatentclassificationNumber;
 
-    @Column(name = "abstract", nullable = false, unique = true)
-    private String summary;
+    @Column(nullable = false)
+    private String Abstract;
 
-    @Column(name = "reg_status")
-    private String regStatus;
+    private String RegistrationStatus;
 
-    @Column(name = "applicant")
-    private String applicant;
+    private String Applicant;
 
-    @Column(name = "reg_date")
-    private Date regDate;
+    private Date RegistrationDate;
 
-    @Column(name = "reg_number")
-    private String regNumber;
+    private String RegistrationNumber;
 
-    @Column(name = "app_date")
-    private Date appDate;
+    private Date ApplicationDate;
 
-    @Column(name = "app_number")
-    private String appNumber;
+    private String OpeningNumber;
 
-    @Column(name = "pub_date")
-    private Date pubDate;
+    private Date OpeningDate;
 
-    @Column(name = "pub_number")
-    private String pubNumber;
+    private String PublicNumber;
 
-    @Column(name = "drawing_path")
-    private String drawing;
+    private Date PublicDate;
 
-    @Column(name = "Thumbnail_path")
-    private String thumbnail;
+    @Column(columnDefinition = "varchar(255) default '이미지 정보 없음'")
+    private String DrawingPath;
+
+    @Column(columnDefinition = "varchar(255) default '이미지 정보 없음'")
+    private String ThumbnailPath;
 }

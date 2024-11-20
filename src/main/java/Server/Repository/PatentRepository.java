@@ -11,22 +11,25 @@ import java.util.List;
 @Repository
 public interface PatentRepository extends JpaRepository<PatentEntity, Long> {
     //CPC 조회
-    @Query(value = "SELECT * FROM patent WHERE cpc_code LIKE :category", nativeQuery = true)
+    @Query("SELECT p FROM PatentEntity p WHERE p.InternationalpatentclassificationNumber LIKE CONCAT(:category, '%|%') OR " +
+            "p.InternationalpatentclassificationNumber LIKE CONCAT('%|', :category, '%')") //A~|~ or ~|A~에만 걸리게
     List<PatentEntity> findByCategory(@Param("category") String category);
+    
 
-    @Query(value = "SELECT * FROM patent WHERE " +
-            "(cpc_code LIKE :category1 OR cpc_code LIKE :category2)", nativeQuery = true)
-    List<PatentEntity> findBy2Categories(@Param("category1") String category1,
-                                     @Param("category2") String category2);
+    @Query("SELECT p FROM PatentEntity p WHERE (p.InternationalpatentclassificationNumber LIKE CONCAT(:category1, '%|%') OR " +
+            "p.InternationalpatentclassificationNumber LIKE CONCAT('%|', :category1, '%')) AND (p.InternationalpatentclassificationNumber LIKE " +
+            "CONCAT(:category2, '%|%') OR p.InternationalpatentclassificationNumber LIKE CONCAT('%|', :category2, '%'))")
+    List<PatentEntity> findBy2Categories(@Param("category1") String category1, @Param("category2") String category2);
 
 
-    @Query(value = "SELECT * FROM patent WHERE " +
-            "(cpc_code LIKE :category1 OR cpc_code LIKE :category2 OR cpc_code LIKE :category3)", nativeQuery = true)
-    List<PatentEntity> findBy3Categories(@Param("category1") String category1,
-                                     @Param("category2") String category2,
-                                     @Param("category3") String category3);
+    @Query("SELECT p FROM PatentEntity p WHERE (p.InternationalpatentclassificationNumber LIKE CONCAT(:category1, '%|%') OR " +
+            "p.InternationalpatentclassificationNumber LIKE CONCAT('%|', :category1, '%')) AND (p.InternationalpatentclassificationNumber LIKE " +
+            "CONCAT(:category2, '%|%') OR p.InternationalpatentclassificationNumber LIKE CONCAT('%|', :category2, '%')) AND " +
+            "(p.InternationalpatentclassificationNumber LIKE CONCAT(:category3, '%|%') OR p.InternationalpatentclassificationNumber LIKE " +
+            "CONCAT('%|', :category3, '%'))")
+    List<PatentEntity> findBy3Categories(@Param("category1") String category1, @Param("category2") String category2, @Param("category3") String category3);
 
     //상세 데이터 조회
-    @Query(value= "SELECT * FROM patent WHERE app_number= :appNumber", nativeQuery = true)
+    @Query("SELECT p FROM PatentEntity p WHERE p.ApplicationNumber= :appNumber")
     List<PatentEntity> findByAppNumber(@Param("appNumber") String appNumber);
 }

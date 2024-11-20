@@ -7,15 +7,17 @@ import lombok.Setter;
 @Setter
 
 public class PatentDto {
-    private String title;
-    private String cpcCode;
-    private String appNumber;
-    private String applicant;
+    private String InventionName;
+    private String InternationalpatentclassificationNumber;
+    private String Abstract;
+    private String ApplicationNumber;
+    private String Applicant;
 
-    public PatentDto(String title, String cpc, String appNumber, String applicant) {
-        this.title = title;
-        this.cpcCode = cpc;
-        this.appNumber = appNumber;
-        this.applicant = applicant;
+    public PatentDto(String title, String cpc, String summary, String appNumber, String applicant) {
+        this.InventionName = title;
+        this.InternationalpatentclassificationNumber = cpc;
+        this.Abstract= summary;
+        this.ApplicationNumber = appNumber;
+        this.Applicant = applicant;
     }
 }

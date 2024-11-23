@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -35,19 +37,19 @@ public class PatentEntity {
 
     private String Applicant;
 
-    private Date RegistrationDate;
+    private LocalDate RegistrationDate;
 
     private String RegistrationNumber;
 
-    private Date ApplicationDate;
+    private LocalDate ApplicationDate;
 
     private String OpeningNumber;
 
-    private Date OpeningDate;
+    private LocalDate OpeningDate;
 
     private String PublicNumber;
 
-    private Date PublicDate;
+    private LocalDate PublicDate;
 
     @Column(columnDefinition = "varchar(255) default '이미지 정보 없음'")
     private String DrawingPath;

@@ -3,6 +3,7 @@ package Server.Dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -14,19 +15,19 @@ public class PatentAllDto {
     private String RegistrationStatus;
     private String Applicant;
     private String RegistrationNumber;
-    private Date RegistrationDate;
+    private LocalDate RegistrationDate;
     private String OpeningNumber;
-    private Date OpeningDate;
+    private LocalDate OpeningDate;
     private String ApplicationNumber;
-    private Date ApplicationDate;
+    private LocalDate ApplicationDate;
     private String PublicNumber;
-    private Date PublicDate;
+    private LocalDate PublicDate;
     private String DrawingPath;
     private String ThumbnailPath;
 
     public PatentAllDto(String title, String cpc, String summary, String applicant,
-                        String regStatus, String appNumber, Date appDate,String regNumber, Date regDate, String openNumber,
-                        Date openDate, String pubNumber, Date pubDate, String drawing, String thumbnail) {
+                        String regStatus, String appNumber, LocalDate appDate,String regNumber, LocalDate regDate, String openNumber,
+                        LocalDate openDate, String pubNumber, LocalDate pubDate, String drawing, String thumbnail) {
         this.InventionName = title;
         this.InternationalpatentclassificationNumber = cpc;
         this.Abstract = summary;

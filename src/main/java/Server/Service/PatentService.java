@@ -6,6 +6,8 @@ import Server.Entity.PatentEntity;
 import Server.Repository.PatentRepository;
 import Server.Dto.PatentDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,9 +19,13 @@ import java.util.List;
 public class PatentService {
     private PatentRepository patentRepository;
     private static final Logger logger= LoggerFactory.getLogger(PatentService.class);
+    Pageable pageable;
+
     @Autowired
+    // 첫 페이지, 1000개 제한
     public PatentService(PatentRepository patentRepository) {
         this.patentRepository = patentRepository;
+        pageable = PageRequest.of(0, 500);
     }
 
     public List<PatentDto> findPatents(List<String> categories) {
@@ -34,14 +40,14 @@ public class PatentService {
         // 카테고리 크기에 따라 다르게 처리
         switch (categories.size()) {
             case 1:
-                entities = patentRepository.findByCategory(categories.get(0));
+                entities = patentRepository.findByCategory(categories.get(0), pageable);
                 break;
             case 2:
                 logger.info("Category 1: {}, Category 2: {}", categories.get(0), categories.get(1));
-                entities = patentRepository.findBy2Categories(categories.get(0), categories.get(1));
+                entities = patentRepository.findBy2Categories(categories.get(0), categories.get(1), pageable);
                 break;
             case 3:
-                entities = patentRepository.findBy3Categories(categories.get(0), categories.get(1), categories.get(2));
+                entities = patentRepository.findBy3Categories(categories.get(0), categories.get(1), categories.get(2), pageable);
                 break;
         }
 
@@ -86,11 +92,11 @@ public class PatentService {
                         entity.getOpeningDate(),
                         entity.getPublicNumber(),
                         entity.getPublicDate(),
-                        entity.getDrawingPath(),
-                        entity.getThumbnailPath()
+                        entity.getDrawingPath()
 
                 ))
                 .toList();
+
     }
 
     // 사용자 정의 예외 처리

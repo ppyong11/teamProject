@@ -7,15 +7,12 @@ import Server.Service.PatentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/patents")
 public class PatentController {
@@ -24,7 +21,8 @@ public class PatentController {
     private PatentService patentService;
 
     //cpc 데이터 조회
-    @GetMapping("/category")
+//    @GetMapping("/category")
+    @RequestMapping("/category")
     public List<PatentDto> getPetents(@RequestParam String categories){
         // categories 문자열을 ,로 분리하여 List<String>에 저장
         String trim_categories= categories.replace(" ", "");

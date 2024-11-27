@@ -23,11 +23,10 @@ public class PatentAllDto {
     private String PublicNumber;
     private LocalDate PublicDate;
     private String DrawingPath;
-    private String ThumbnailPath;
 
     public PatentAllDto(String title, String cpc, String summary, String applicant,
                         String regStatus, String appNumber, LocalDate appDate,String regNumber, LocalDate regDate, String openNumber,
-                        LocalDate openDate, String pubNumber, LocalDate pubDate, String drawing, String thumbnail) {
+                        LocalDate openDate, String pubNumber, LocalDate pubDate, String drawing) {
         this.InventionName = title;
         this.InternationalpatentclassificationNumber = cpc;
         this.Abstract = summary;
@@ -42,6 +41,5 @@ public class PatentAllDto {
         this.PublicNumber= pubNumber;
         this.PublicDate = pubDate;
         this.DrawingPath = drawing;
-        this.ThumbnailPath = thumbnail;
     }
 }

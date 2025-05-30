@@ -38,4 +38,6 @@
 ## 📌 프로젝트 결과물
 - **영상 링크**  
  https://drive.google.com/file/d/1IziAaRZ3RMDwySsjdx2uOZelAvvZFFK6/view?usp=sharing
-## 📝 배운 점 
+## 📝 프로젝트 상세 내용 및 기여
+  - **노션 링크**  
+ https://www.notion.so/1e6516e994b381128499c6ba55862da9?source=copy_link

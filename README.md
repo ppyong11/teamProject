@@ -5,7 +5,7 @@
 4. **프로젝트 목적**: 특허 데이터 기반의 2D, 3D 지식 그래프를 구축하고 이를 시각화하여 사용자가 방대한 특허 데이터를 직관적으로 이해하고 효율적으로 의사결정할 수 있도록 지원합니다.
 6. **사용 기술**
     - 프론트엔드: Node.js, D3.js, React, Three.js
-    - 백엔드: Java, Spring Boot, MariaDB, Restful API
+    - 백엔드: Java, Spring Boot, MariaDB, Restful API, JPA, KIPRIS API
      
 ## 📌 주요 기능 UI 소개
 - **UI 소개**

@@ -21,7 +21,7 @@
     <img width="763" alt="테이블 검색 결과" src="https://github.com/user-attachments/assets/0e53514d-8aa4-4114-b6be-4a666a417826" /> <br/> <br/>
 
   - **CPC 분류표** <br/>
-    CPC 코드란 전 세계의 특허 문서를 기술 분야별로 정밀하게 분류해 놓은 코드입니다. <br/>본 프로젝트에서 해당 코드를 이용해 데이터를 분류하였으며, 플랫폼 내에서 바로 CPC 분류표를 확인할 수 있습니다.
+    CPC 코드란 전 세계의 특허 문서를 기술 분야별로 정밀하게 분류해 놓은 코드입니다. <br/>본 프로젝트에서 해당 코드를 이용해 데이터를 분류하였으며, 웹 내에서 바로 CPC 분류표를 확인할 수 있습니다.
     <img width="763" alt="CPC 코드" src="https://github.com/user-attachments/assets/bf6f27a5-ddf5-409d-aaa6-84093462a042" /> <br/> <br/>
 
     

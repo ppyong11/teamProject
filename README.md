@@ -40,4 +40,4 @@
  https://drive.google.com/file/d/1IziAaRZ3RMDwySsjdx2uOZelAvvZFFK6/view?usp=sharing
 ## 📝 프로젝트 상세 내용 및 기여
   - **노션 링크**  
- https://www.notion.so/1e6516e994b381128499c6ba55862da9?source=copy_link
+https://www.notion.so/26a516e994b380389999cc3bf3cd4088?source=copy_link#28a516e994b380aa9741c9d426959b69

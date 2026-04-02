@@ -1,11 +1,13 @@
 ## 📌 프로젝트 소개
 1. **프로젝트명**: 특허 데이터 관계 시각화 웹
 2. **프로젝트 인원**: 4명 (프론트엔드 2명, 백엔드 2명)
-3. **프로젝트 기간**: 2024.09~2024.11 (12주) 
-4. **프로젝트 목적**: 특허 데이터 기반의 2D, 3D 지식 그래프를 구축하고 이를 시각화하여 사용자가 방대한 특허 데이터를 직관적으로 이해하고 효율적으로 의사결정할 수 있도록 지원합니다.
+3. **프로젝트 기간**: 2024.09~2024.11
+4. **프로젝트 목표**: 특허 데이터 기반의 2D, 3D 지식 그래프를 구축하고 이를 시각화하여 사용자가 방대한 특허 데이터를 직관적으로 이해하고 효율적으로 의사결정할 수 있도록 지원합니다.
 6. **사용 기술**
-    - 프론트엔드: Node.js, D3.js, React, Three.js
-    - 백엔드: Java, Spring Boot, MariaDB, Restful API, JPA, KIPRIS API
+    - **Language:** Java
+    - **Framework:** Spring Boot
+    - **Database:** MariaDB
+    - **API:** RESTful API, (외부) KIPRIS API
      
 ## 📌 주요 기능 UI 소개
 - **UI 소개**
@@ -35,9 +37,9 @@
   <img width="763" src="https://github.com/user-attachments/assets/2b796d99-1d23-4587-9672-51b0425e7404"/>    <br/> 
   특허 데이터의 키워드를 입력해 검색이 가능합니다. 
 
-## 📌 프로젝트 결과물
-- **영상 링크**  
- https://drive.google.com/file/d/1IziAaRZ3RMDwySsjdx2uOZelAvvZFFK6/view?usp=sharing
-## 📝 프로젝트 상세 내용 및 기여
+## 📝 프로젝트 상세 내용
   - **노션 링크**  
 https://www.notion.so/32a516e994b3816ba2b9fe820f8a8b76?source=copy_link
+- **영상 링크**  
+ https://drive.google.com/file/d/1IziAaRZ3RMDwySsjdx2uOZelAvvZFFK6/view?usp=sharing
+

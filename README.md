@@ -8,7 +8,7 @@
     - **Framework:** Spring Boot
     - **Database:** MariaDB
     - **API:** RESTful API, (외부) KIPRIS API
-## 담당 역할 및 구현 내용
+## 📌 담당 역할 및 구현 내용
 ### 대량 데이터 DB 적재
 <img width="469" height="217" alt="image (1)" src="https://github.com/user-attachments/assets/3b1a94b8-3502-467c-86bc-fa9f8801d2d3" /><br>
 KIPRIS API로 수집한 특허 데이터를 배치 처리(JDBC Batch) 방식으로 적재해 대량 데이터 처리 성능을 개선했으며 특허가 여러 CPC 코드를 가지는 특성을 고려해 출원번호를 기준으로 중복 데이터를 방지하도록 설계했습니다.
